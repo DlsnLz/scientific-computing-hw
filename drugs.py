@@ -1,5 +1,5 @@
 # Funcion que identificara el tiempo en el que el cuerpo liberara la droga consumida por el paciente.
-# Feb - 25 -2016
+# Feb - 27,28,29 -2016
 # Dlsn Lzro
 
 # Librerias Necesarias importadas
@@ -29,7 +29,6 @@ for i in range(101):
 
 ynew=numpy.array(y)
 tnew=numpy.array(t)
-
 print ynew
 print tnew
 
