@@ -1,4 +1,4 @@
-# esta funcion define si un numero es menor qu otro.
+# esta funcion define si un numero es menor que otro.
 
 def minimo (x,y):
 	if x < y:
