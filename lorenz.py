@@ -33,14 +33,7 @@ znew=numpy.array(z)
 tnew=numpy.array(t)
 
 print xnew
-print ynew
 print znew
-print tnew
-
-
-matplotlib.pyplot.plot(tnew,znew)
-matplotlib.pyplot.plot(tnew,xnew)
-matplotlib.pyplot.show()
 
 matplotlib.pyplot.plot(xnew,znew)
 matplotlib.pyplot.show()

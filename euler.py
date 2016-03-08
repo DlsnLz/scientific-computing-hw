@@ -1,6 +1,5 @@
 # Un nuevo codigo donde se crearan dos funciones: f(x) y g(x).
 
-#Codigo del dia 23 de febrero; dos funciones g() y f() para un nuevo mapa logistico.
 import numpy
 import matplotlib
 import matplotlib.pyplot
