@@ -34,3 +34,4 @@ print tnew
 
 matplotlib.pyplot.plot(tnew,ynew)
 matplotlib.pyplot.show()
+
