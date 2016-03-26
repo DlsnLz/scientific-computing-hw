@@ -49,9 +49,12 @@ ax = fig.gca(projection='3d')
 # comando para graficar x,y,z y ademas, se le da titulo a la grafica.
 
 ax.plot(xs, ys, zs)
-ax.set_xlabel("X Axis")
-ax.set_ylabel("Y Axis")
-ax.set_zlabel("Z Axis")
-ax.set_title("Lorenz Attractor")
+ax.set_xlabel("X")
+ax.set_ylabel("Y")
+ax.set_zlabel("Z")
+ax.set_title("Atractor de lorenz \n DlsnLz")
+
 
 plt.show()
+
+print (" Universidad de Medellin _ DlsnLz ")
