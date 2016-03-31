@@ -11,9 +11,9 @@ y  = range(6)
 z  = range(6)
 dlt= 0.001
 v  = -65
-x0 = 0.317
-y0 = 0.05
-z0 = 0.6
+n0 = 0.317
+m0 = 0.05
+h0 = 0.6
 T  = 6.3
 phi= 3 **((T-6.3)/10)
 bn = phi*(0.125 ** (v/80))
@@ -34,18 +34,18 @@ def f(n, m, h):
    
 for i in range(6):
 
-	x1 = ((dlt*(an*(1-x0)))-(dlt*(bn*x0)) + x0)
-	y1 = ((dlt*(am*(1-y0)))-(dlt*(bm*y0)) + y0)
-	z1 = ((dlt*(ah*(1-z0)))-(dlt*(bh*z0)) + z0)
+	n1 = ((dlt*(an*(1-n0)))-(dlt*(bn*n0)) + n0)
+	m1 = ((dlt*(am*(1-m0)))-(dlt*(bm*m0)) + m0)
+	h1 = ((dlt*(ah*(1-h0)))-(dlt*(bh*h0)) + h0)
 
-	x0 = x1
-	x[i] = x1
+	n0 = n1
+	n[i] = n1
 
-	y0 = y1
-	y[i] = y1
+	m0 = m1
+	m[i] = m1
 
-	z0 = z1
-	z[i] = z1
+	h0 = h1
+	h[i] = h1
 
-plt.plot()
+plt.plot(z, x)
 plt.show()
