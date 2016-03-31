@@ -19,10 +19,13 @@ x = range (101)
 
 
 for i in range (101):
+	
 	y1 = y0+d*((kx*y0)-(kxy*x0*y0))
 	x1 = x0+d*((kyx*y0*x0)-(kx*x0))
+	
 	y0 = y1
 	y[i] = y1
+	
 	x0 = x1
 	x[i] = x1
 

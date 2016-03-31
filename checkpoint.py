@@ -1,4 +1,5 @@
-# RK for the 'drugs' problem
+# RK for the 'drugs' problem, cuanto tiempo demora en salir 
+# la droga de un cuerpo.
 
 import numpy as np
 import matplotlib
