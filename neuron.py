@@ -6,38 +6,51 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
+def f(n, m, h):
+      
+      N = alpha_n * (1-n0) - beta_n * n0
+      M = alpha_m * (1-m0) - beta_m * m0
+      H = alpha_h * (1-h0) - beta_h * h0
+      
+      return N, M, H
 
+d1 = 0.003
+
+n0 = 0.317
+m0 = 0.05
+h0 = 0.6
+v = 77
 temp = 6.3 # Grados centigrados (C)
 phi = 3 * np.exp(temp-6.3)/10
+alpha_n = phi *(0.01 * (-v + 10)/(np.exp((-v  + 10) / 10))-1)
+beta_n = phi *(0.125 * np.exp(-v/80))
+alpha_m = phi *(0.01 * (-v + 25)/(np.exp(-v + 25) / 10) -1)
+beta_m = phi *(4 * np.exp(-v / 18))
+alpha_h = phi *(0.07 * np.exp(-v / 20))
+beta_h = phi *(1 / (np.exp(-v + 30) / 10) + 1)
 
-# particula de activacion de potasio
-alpha_n = lambda v: phi *(0.01 * (-v + 10)/(np.exp((-v  + 10) / 10))-1) if v!= 10 else 0.1
-beta_n  = lambda v: phi *(0.125 * np.exp(-v/80))
-n_inf   = lambda v: alpha_n(-v)/(alpha_n(-v)+beta_n(-v))
+n = 5 / d1
+t = np.linspace(0, 5, num = n)
+n = np.zeros(len(t))
+m = np.zeros(len(t))
+h = np.zeros(len(t))
 
-# Las particulas m y h son numeros adimensionales entre 0 y 1.
-# particula de activacion del sodio (Na)
-alpha_m = lambda v: phi *(0.01 * (-v + 25)/(np.exp(-v + 25) / 10) -1)  if v!= 25 else 1  
-beta_m  = lambda v: phi *(4 * np.exp(-v / 18))
-m_inf   = lambda v: alpha_m(-v)/(alpha_m(-v)+beta_m(-v))
+for j in range(len(t)):
 
-# particula de inactivacion del sodio (Na)
-alpha_h = lambda v: phi *(0.07 * np.exp(-v / 20))
-beta_h  = lambda v: phi *(1 / (np.exp(-v + 30) / 10) + 1)
-h_inf   = lambda v: alpha_h(-v)/(alpha_h(-v)+beta_h(-v))
-
-g_Na = 120    # Conductancia maxima de Na (mS/cm)
-g_k  = 36     # Conductancia maxima de K  (mS/cm)
-g_L  = 0.3    # conductancia maxima de escape (mS/cm)
-v_Na = 50     # Desplazamiento del potencial de equilibrio de Na (mV)
-v_k  = -77    # Desplazamiento del potencial de equilibrio de K (mV)
-v_l  = -54    # Desplazamiento del potencial de equilibrio de fuga (mV)
-c_m  = 0.1    # Capacitancia de la membrana (uF/cm)
-
-delta = 0.003
-t = (0, 6, delta)
-v = np.zeros(len(t))
+      N, M, H = f(n0, m0, h0)
+      
+      L = n0 + d1 * (n0+0.5*d1*N)
+      M = m0 + d1 * (m0+0.5*d1*M) 
+      R = h0 + d1 * (h0+0.5*d1*H)
+      
+      n0 = L
+      m0 = M
+      h0 = R
+      
+      n[j] = L
+      m[j] = M
+      h[j] = R
     
-plt.plot(b)
+plt.plot(t, n)
 plt.show()
   

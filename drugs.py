@@ -29,6 +29,7 @@ for i in range(101):
 
 ynew=numpy.array(y)
 tnew=numpy.array(t)
+
 print ynew
 print tnew
 
