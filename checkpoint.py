@@ -44,4 +44,3 @@ for j in range(len(t)):
 
 plt.plot(x, y)
 plt.show()
-
