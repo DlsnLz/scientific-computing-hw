@@ -98,11 +98,13 @@ t0 = 1.9999
 print nint(t0), mint(t0), hint(t0)
 
 # graficando a n,m,h en funcion del tiempo..... colores lineas y formas: - o brg
+# Grafica del potencial de accion
+
+plt.ion
+plt.subplot(2,1,1)
 plt.plot(t, n, 'b-', t0, nint(t0), 'bo')
 plt.plot(t, m, 'r-', t0, mint(t0), 'ro')
 plt.plot(t, h, 'g-', t0, hint(t0), 'go')
-plt.show()
-
-# Grafica del potencial de accion	
+plt.subplot(2,1,2)
 plt.plot(t, V, 'k-')
 plt.show()
