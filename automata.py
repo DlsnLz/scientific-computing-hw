@@ -4,3 +4,9 @@ import matplotlib as plt
 import matplotlib.pyplot as mplt
 
 w = np.zeros([100, 100], dtype = np.int8)
+
+# direcciones
+
+def nextdirection(d, c):
+
+
